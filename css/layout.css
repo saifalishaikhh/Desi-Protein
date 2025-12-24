@@ -1,0 +1,58 @@
+/* ===== PAGE LAYOUT ===== */
+main {
+  flex: 1;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(90deg, #43a047, #66bb6a);
+  padding: 14px 28px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Cart icon */
+.cart-icon {
+  position: relative;
+  background: white;
+  color: var(--dark-green);
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #ff5252;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--dark-green);
+  color: white;
+  text-align: center;
+  padding: 18px;
+  font-size: 14px;
+}

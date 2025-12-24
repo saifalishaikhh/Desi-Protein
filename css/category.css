@@ -1,0 +1,131 @@
+/* ================= CATEGORY PAGE ================= */
+
+.menu-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px 90px;
+}
+
+/* SECTION */
+.menu-section {
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* SECTION HEADING (FIXED) */
+.section-header {
+  width: 640px; /* same visual width as grid */
+  text-align: center;
+  padding: 14px 0;
+  margin-bottom: 36px;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #43a047, #66bb6a);
+  border-radius: 999px;
+  box-shadow: 0 10px 26px rgba(67,160,71,0.45);
+}
+
+/* GRID – ALWAYS 2 COLUMNS */
+.menu-grid {
+  width: 640px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+}
+
+/* CARD */
+.menu-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px 20px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+
+/* IMAGE */
+.menu-card img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  margin-bottom: 14px;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15));
+}
+
+/* NAME */
+.menu-card h4 {
+  font-size: 16px;
+  margin: 6px 0 6px;
+  font-weight: 600;
+}
+
+/* PRICE */
+.menu-card .price {
+  font-size: 17px;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 14px;
+}
+
+/* VIEW BUTTON (FIXED) */
+.view-btn {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #2e7d32;
+  border: 2px solid #4CAF50;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.view-btn:hover {
+  background: #4CAF50;
+  color: white;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .section-header {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .menu-grid {
+    width: 100%;
+    grid-template-columns: 1fr 1fr; /* ALWAYS 2 */
+    gap: 18px;
+  }
+
+  .menu-card {
+    padding: 24px 12px;
+  }
+
+  .menu-card img {
+    width: 78px;
+    height: 78px;
+  }
+
+  .menu-card h4 {
+    font-size: 14px;
+  }
+
+  .menu-card .price {
+    font-size: 15px;
+  }
+
+  .view-btn {
+    padding: 8px 22px;
+    font-size: 13px;
+  }
+}

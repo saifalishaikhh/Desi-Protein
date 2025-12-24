@@ -1,0 +1,23 @@
+:root {
+  --green: #4CAF50;
+  --dark-green: #2e7d32;
+  --light-green: #e8f5e9;
+  --text: #1b1b1b;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--light-green);
+  color: var(--text);
+}

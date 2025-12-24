@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Category | Desi Protein</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Global -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <!-- Category only -->
+  <link rel="stylesheet" href="css/category.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🥗 Desi Protein</h1>
+  <a href="cart.html" class="cart-icon">
+    🛒 Cart
+    <span id="cartCount" class="cart-count">0</span>
+  </a>
+</header>
+
+<main class="menu-page" id="menu"></main>
+
+<footer>
+  Eat Fresh • Gain Strength 💪 <br>
+  © 2025 Desi Protein
+</footer>
+
+<script>
+const type = new URLSearchParams(location.search).get("type");
+const menu = document.getElementById("menu");
+
+if (type === "salad") {
+  menu.innerHTML = `
+    ${section("Sprout Salads", [
+      card("mix-sprout","Mix Sprout Salad","₹60","images/products/mix-sprout.png"),
+      card("boiled-sprout","Boiled Sprout Salad","₹70","images/products/boiled-sprout.png")
+    ])}
+
+    ${section("Corn Salads", [
+      card("corn-chaat","Corn Chaat Salad","₹80","images/products/corn-chaat.png"),
+      card("creamy-corn","Creamy Corn Salad","₹99","images/products/creamy-corn.png")
+    ])}
+
+    ${section("Chana Salads", [
+      card("boiled-chana","Boiled Chana Salad","₹99","images/products/boiled-chana.png"),
+      card("raw-chana","Raw Chana Salad","₹80","images/products/raw-chana.png")
+    ])}
+
+    ${section("Fruit Salad", [
+      card("fruit-salad","Fresh Fruit Salad","₹120","images/products/fruit-salad.png")
+    ])}
+  `;
+}
+
+if (type === "juice") {
+  menu.innerHTML = `
+    ${section("Fresh Juices", [
+      card("chana-sattu","Chana Sattu","₹49","images/products/chana-sattu.png"),
+      card("beetroot-carrot","Beetroot & Carrot Juice","₹39","images/products/beetroot-carrot.png"),
+      card("lemon-juice","Lemon Juice","₹29","images/products/lemon-juice.png")
+    ])}
+  `;
+}
+
+function section(title, cards) {
+  return `
+    <section class="menu-section">
+      <div class="section-header">${title}</div>
+      <div class="menu-grid">
+        ${cards.join("")}
+      </div>
+    </section>
+  `;
+}
+
+function card(id, name, price, img) {
+  return `
+    <div class="menu-card">
+      <img src="${img}" alt="${name}">
+      <h4>${name}</h4>
+      <p class="price">${price}</p>
+      <a href="product.html?id=${id}" class="view-btn">View</a>
+    </div>
+  `;
+}
+</script>
+<script src="js/cart.service.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", updateCartCount);
+</script>
+
+</body>
+</html>

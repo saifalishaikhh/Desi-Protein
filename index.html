@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desi Protein | Eat Fresh, Gain Strength</title>
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <!-- Home only -->
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🥗 Desi Protein</h1>
+  <a href="cart.html" class="cart-icon">
+    🛒 Cart
+    <span id="cartCount" class="cart-count">0</span>
+  </a>
+</header>
+
+<main>
+  <div class="category-grid">
+
+    <a href="category.html?type=salad" class="category-card">
+      <img src="images/home-salad.png" alt="Salads">
+      <h3>Salads</h3>
+      <span class="category-btn">Explore</span>
+    </a>
+
+    <a href="category.html?type=juice" class="category-card">
+      <img src="images/home-juices.png" alt="Juices">
+      <h3>Juices</h3>
+      <span class="category-btn">Explore</span>
+    </a>
+
+    <!-- Future categories plug & play -->
+    <!--
+    <a href="category.html?type=protein" class="category-card">
+      <img src="images/home-protein.png">
+      <h3>Protein Bowls</h3>
+      <span class="category-btn">Explore</span>
+    </a>
+    -->
+
+  </div>
+</main>
+
+<footer>
+  <p>Eat Fresh • Gain Strength 💪</p>
+  <p>© 2025 Desi Protein</p>
+</footer>
+<script src="js/cart.service.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", updateCartCount);
+</script>
+
+</body>
+</html>

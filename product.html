@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product | Desi Protein</title>
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <!-- Product only -->
+  <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <h1>🥗 Desi Protein</h1>
+
+  <a href="cart.html" class="cart-icon">
+    🛒 Cart
+    <span id="cartCount" class="cart-count">0</span>
+  </a>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main>
+  <div class="product-page" id="productPage"></div>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <p>Eat Fresh • Gain Strength 💪</p>
+  <p>© 2025 Desi Protein</p>
+</footer>
+
+<!-- ================= TOAST ================= -->
+<div id="cartToast" class="cart-toast">
+  <span>🛒</span>
+  <span id="toastText"></span>
+</div>
+
+<!-- ================= SCRIPTS (ORDER MATTERS) ================= -->
+<script src="js/data.js"></script>
+<script src="js/cart.service.js"></script>
+
+<script>
+/* ================= PRODUCT PAGE LOGIC ================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get("id");
+
+  const product = products.find(p => p.id === productId);
+  if (!product) {
+    document.body.innerHTML = "<h2 style='text-align:center'>Product not found</h2>";
+    return;
+  }
+
+  let qty = 1;
+
+  function renderProduct() {
+    const sizes = Object.keys(product.prices);
+    const defaultSize = sizes[0];
+
+    document.getElementById("productPage").innerHTML = `
+      <img src="${product.image}" alt="${product.name}">
+
+      <div>
+        <h2>${product.name}</h2>
+
+        <div class="option-block">
+          <label>Select gram</label>
+          <select id="sizeSelect">
+            ${sizes.map(s => `<option value="${s}">${s} - ₹${product.prices[s]}</option>`).join("")}
+          </select>
+        </div>
+
+        <div class="price-qty-row">
+          <div class="product-price">
+            ₹<span id="priceValue">${product.prices[defaultSize]}</span>
+          </div>
+
+          <div class="qty-box">
+            <button id="minusBtn" type="button">−</button>
+            <strong id="qtyText">${qty}</strong>
+            <button id="plusBtn" type="button">+</button>
+          </div>
+        </div>
+
+        <button class="add-cart-btn" id="addBtn">
+          Add to Cart 🛒
+        </button>
+      </div>
+    `;
+
+    // SAFE EVENT BINDING
+    document.getElementById("sizeSelect").addEventListener("change", updatePrice);
+    document.getElementById("minusBtn").addEventListener("click", () => updateQty(-1));
+    document.getElementById("plusBtn").addEventListener("click", () => updateQty(1));
+    document.getElementById("addBtn").addEventListener("click", addToCartHandler);
+  }
+
+  function updatePrice() {
+    const size = document.getElementById("sizeSelect").value;
+    document.getElementById("priceValue").innerText = product.prices[size];
+  }
+
+  function updateQty(change) {
+    qty = Math.max(1, qty + change);
+    document.getElementById("qtyText").innerText = qty;
+  }
+
+  function addToCartHandler() {
+    const size = document.getElementById("sizeSelect").value;
+    addToCart(product, size, qty);
+    updateCartCount();
+    showCartToast(`${product.name} (${size}) added to cart`);
+  }
+
+  function showCartToast(text) {
+    const toast = document.getElementById("cartToast");
+    document.getElementById("toastText").innerText = text;
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 2000);
+  }
+
+  // INIT
+  renderProduct();
+  updateCartCount();
+});
+</script>
+
+</body>
+</html>

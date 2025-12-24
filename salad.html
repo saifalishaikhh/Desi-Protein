@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Salad Detail</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  🥗 Salad Detail
+  <a href="cart.html" class="cart-btn">View Cart 🛒</a>
+</header>
+
+<div class="detail">
+  <img src="images/greek.jpg">
+  <h2>Greek Salad</h2>
+  <p>₹150</p>
+
+  <input type="number" id="qty" value="1" min="1">
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
+
+<script src="js/cart.js"></script>
+<script>
+addProduct({
+  id: 1,
+  name: "Greek Salad",
+  price: 150,
+  image: "images/greek.jpg"
+});
+</script>
+
+</body>
+</html>
