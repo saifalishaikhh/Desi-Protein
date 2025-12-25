@@ -1,137 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product | Desi Protein</title>
 
-  <!-- Global CSS -->
+  <!-- BASIC SEO -->
+  <title>Desi Protein | Fresh Salads & Healthy Juices</title>
+
+  <meta name="description"
+    content="Desi Protein offers fresh protein-rich salads and healthy juices made from natural ingredients. Eat fresh, gain strength." />
+
+  <meta name="keywords"
+    content="protein salad, sprouts salad, healthy juice, desi protein, gym diet, weight loss food" />
+
+  <meta name="author" content="Desi Protein">
+  <meta name="robots" content="index, follow">
+  <!-- ================= SOCIAL MEDIA PREVIEW ================= -->
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:title" content="Desi Protein | Fresh Salads & Healthy Juices">
+  <meta property="og:description" content="Fresh protein-rich salads & natural juices. Eat clean. Gain strength.">
+  <meta property="og:image" content="https://saifalishaikhh.github.io/Desi-Protein/images/brand/social-preview.png">
+  <meta property="og:url" content="https://saifalishaikhh.github.io/Desi-Protein/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Desi Protein | Eat Fresh • Gain Strength">
+  <meta name="twitter:description" content="Protein-rich salads & fresh juices made daily.">
+  <meta name="twitter:image" content="https://saifalishaikhh.github.io/Desi-Protein/images/brand/social-preview.png">
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4CAF50">
+
+  <!-- iOS support -->
+  <link rel="apple-touch-icon" href="images/icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Desi Protein">
+
+  <!-- GLOBAL -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
 
-  <!-- Product only -->
+  <!-- PRODUCT -->
   <link rel="stylesheet" href="css/product.css">
 </head>
+
 <body>
 
-<!-- ================= HEADER ================= -->
-<header>
-  <h1>🥗 Desi Protein</h1>
+  <!-- ================= HEADER ================= -->
+  <header>
+    <h1>🥗 Desi Protein</h1>
+    <a href="cart.html" class="cart-icon">
+      🛒 Cart <span id="cartCount" class="cart-count">0</span>
+    </a>
+  </header>
 
-  <a href="cart.html" class="cart-icon">
-    🛒 Cart
-    <span id="cartCount" class="cart-count">0</span>
-  </a>
-</header>
+  <!-- ================= MAIN ================= -->
+  <main>
+    <div class="product-wrapper" id="productPage"></div>
+  </main>
 
-<!-- ================= MAIN ================= -->
-<main>
-  <div class="product-page" id="productPage"></div>
-</main>
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p>Eat Fresh • Gain Strength 💪</p>
+    <p>© 2025 Desi Protein</p>
+  </footer>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-  <p>Eat Fresh • Gain Strength 💪</p>
-  <p>© 2025 Desi Protein</p>
-</footer>
+  <!-- ================= TOAST ================= -->
+  <div id="cartToast" class="cart-toast">
+    <span>🛒</span>
+    <span id="toastText"></span>
+  </div>
 
-<!-- ================= TOAST ================= -->
-<div id="cartToast" class="cart-toast">
-  <span>🛒</span>
-  <span id="toastText"></span>
-</div>
+  <!-- ================= SCRIPTS ================= -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.service.js"></script>
 
-<!-- ================= SCRIPTS (ORDER MATTERS) ================= -->
-<script src="js/data.js"></script>
-<script src="js/cart.service.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
 
-<script>
-/* ================= PRODUCT PAGE LOGIC ================= */
+      const id = new URLSearchParams(window.location.search).get("id");
+      const product = products.find(p => p.id === id);
 
-document.addEventListener("DOMContentLoaded", () => {
+      if (!product) {
+        document.getElementById("productPage").innerHTML =
+          "<h2 style='text-align:center'>Product not found</h2>";
+        return;
+      }
 
-  const params = new URLSearchParams(window.location.search);
-  const productId = params.get("id");
+      let qty = 1;
 
-  const product = products.find(p => p.id === productId);
-  if (!product) {
-    document.body.innerHTML = "<h2 style='text-align:center'>Product not found</h2>";
-    return;
-  }
+      /* ✅ AUTO-DETECT PACK & PRICE */
+      const packKey = Object.keys(product.prices)[0];   // e.g. 500g / 600g / 200ml
+      const price = product.prices[packKey];
 
-  let qty = 1;
+      document.getElementById("productPage").innerHTML = `
+    <div class="product-main-card">
 
-  function renderProduct() {
-    const sizes = Object.keys(product.prices);
-    const defaultSize = sizes[0];
+      <div class="product-image-wrap">
+        <img src="${product.image}" alt="${product.name}">
+      </div>
 
-    document.getElementById("productPage").innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
-
-      <div>
+      <div class="product-content">
         <h2>${product.name}</h2>
 
-        <div class="option-block">
-          <label>Select gram</label>
-          <select id="sizeSelect">
-            ${sizes.map(s => `<option value="${s}">${s} - ₹${product.prices[s]}</option>`).join("")}
-          </select>
+        <div class="pack-row">
+          <span>Pack Size</span>
+          <strong>${packKey}</strong>
         </div>
 
         <div class="price-qty-row">
-          <div class="product-price">
-            ₹<span id="priceValue">${product.prices[defaultSize]}</span>
-          </div>
+          <div class="product-price">₹${price}</div>
 
           <div class="qty-box">
-            <button id="minusBtn" type="button">−</button>
-            <strong id="qtyText">${qty}</strong>
-            <button id="plusBtn" type="button">+</button>
+            <button onclick="updateQty(-1)">−</button>
+            <strong id="qtyText">1</strong>
+            <button onclick="updateQty(1)">+</button>
           </div>
         </div>
 
-        <button class="add-cart-btn" id="addBtn">
+        <button class="add-cart-btn" onclick="addItem()">
           Add to Cart 🛒
         </button>
       </div>
-    `;
+    </div>
 
-    // SAFE EVENT BINDING
-    document.getElementById("sizeSelect").addEventListener("change", updatePrice);
-    document.getElementById("minusBtn").addEventListener("click", () => updateQty(-1));
-    document.getElementById("plusBtn").addEventListener("click", () => updateQty(1));
-    document.getElementById("addBtn").addEventListener("click", addToCartHandler);
-  }
+    <!-- INGREDIENTS -->
+    <section class="info-card">
+      <h3>Main Ingredients</h3>
+      <p>${product.ingredients.main.join(", ")}</p>
 
-  function updatePrice() {
-    const size = document.getElementById("sizeSelect").value;
-    document.getElementById("priceValue").innerText = product.prices[size];
-  }
+      <h4>Fresh Vegetables & Seeds <span>(for taste)</span></h4>
+      <p>${product.ingredients.secondary.join(", ") || "—"}</p>
 
-  function updateQty(change) {
-    qty = Math.max(1, qty + change);
-    document.getElementById("qtyText").innerText = qty;
-  }
+      <h4>Natural Seasoning <span>(for taste)</span></h4>
+      <p>${product.ingredients.seasoning.join(", ") || "—"}</p>
+    </section>
 
-  function addToCartHandler() {
-    const size = document.getElementById("sizeSelect").value;
-    addToCart(product, size, qty);
-    updateCartCount();
-    showCartToast(`${product.name} (${size}) added to cart`);
-  }
+    <!-- NUTRITION -->
+    <section class="info-card">
+      <h3>Nutrition Facts (per ${packKey})</h3>
+      <div class="nutrition-grid">
+        ${Object.entries(product.nutrition)
+          .map(([k, v]) => `<div><strong>${k}</strong><span>${v}</span></div>`)
+          .join("")
+        }
+      </div>
+    </section>
 
-  function showCartToast(text) {
-    const toast = document.getElementById("cartToast");
-    document.getElementById("toastText").innerText = text;
-    toast.classList.add("show");
-    setTimeout(() => toast.classList.remove("show"), 2000);
-  }
+    <!-- BENEFITS -->
+    <section class="info-card">
+      <h3>Daily Consumption Benefits</h3>
+      <ul>
+        ${product.dailyBenefits.map(b => `<li>${b}</li>`).join("")}
+      </ul>
+    </section>
+  `;
 
-  // INIT
-  renderProduct();
-  updateCartCount();
-});
-</script>
+      updateCartCount();
+
+      window.updateQty = (val) => {
+        qty = Math.max(1, qty + val);
+        document.getElementById("qtyText").innerText = qty;
+      };
+
+      window.addItem = () => {
+        addToCart(product, packKey, qty);
+        updateCartCount();
+        showToast(`${product.name} added to cart`);
+      };
+
+      function showToast(text) {
+        const toast = document.getElementById("cartToast");
+        document.getElementById("toastText").innerText = text;
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 2000);
+      }
+    });
+    // for add Dyanamic SEO
+    document.title = `${product.name} | Desi Protein`;
+
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute(
+        "content",
+        `${product.name} made with fresh natural ingredients. Rich in protein, vitamins & minerals.`
+      );
+
+  </script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker Registered"));
+    }
+  </script>
+
 
 </body>
+
 </html>
