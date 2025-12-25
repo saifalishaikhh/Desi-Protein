@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- HOME -->
+  <url>
+    <loc>https://saifalishaikhh.github.io/Desi-Protein/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- CATEGORY PAGE -->
+  <url>
+    <loc>https://saifalishaikhh.github.io/Desi-Protein/category.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- CART -->
+  <url>
+    <loc>https://saifalishaikhh.github.io/Desi-Protein/cart.html</loc>
+    <priority>0.60</priority>
+  </url>
+
+  <!-- PRODUCTS -->
+  <url>
+    <loc>https://saifalishaikhh.github.io/Desi-Protein/product.html?id=mix-sprout</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://saifalishaikhh.github.io/Desi-Protein/product.html?id=boiled-sprout</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://saifalishaikhh.github.io/Desi-Protein/product.html?id=corn-chaat</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://saifalishaikhh.github.io/Desi-Protein/product.html?id=creamy-corn</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://saifalishaikhh.github.io/Desi-Protein/product.html?id=boiled-chana</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://saifalishaikhh.github.io/Desi-Protein/product.html?id=raw-chana</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://saifalishaikhh.github.io/Desi-Protein/product.html?id=fruit-salad</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- JUICES -->
+  <url>
+    <loc>https://saifalishaikhh.github.io/Desi-Protein/product.html?id=chana-sattu</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://saifalishaikhh.github.io/Desi-Protein/product.html?id=beetroot-carrot</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://saifalishaikhh.github.io/Desi-Protein/product.html?id=lemon-juice</loc>
+    <priority>0.85</priority>
+  </url>
+
+</urlset>
