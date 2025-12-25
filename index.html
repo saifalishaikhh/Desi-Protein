@@ -3,7 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desi Protein | Eat Fresh, Gain Strength</title>
+  <!-- BASIC SEO -->
+<title>Desi Protein | Fresh Salads & Healthy Juices</title>
+
+<meta name="description"
+      content="Desi Protein offers fresh protein-rich salads and healthy juices made from natural ingredients. Eat fresh, gain strength." />
+
+<meta name="keywords"
+      content="protein salad, sprouts salad, healthy juice, desi protein, gym diet, weight loss food" />
+
+<meta name="author" content="Desi Protein">
+<meta name="robots" content="index, follow">
+<!-- ================= SOCIAL MEDIA PREVIEW ================= -->
+
+<!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+<meta property="og:title" content="Desi Protein | Fresh Salads & Healthy Juices">
+<meta property="og:description" content="Fresh protein-rich salads & natural juices. Eat clean. Gain strength.">
+<meta property="og:image" content="https://saifalishaikhh.github.io/Desi-Protein/images/brand/social-preview.png">
+<meta property="og:url" content="https://saifalishaikhh.github.io/Desi-Protein/">
+<meta property="og:type" content="website">
+
+<!-- Twitter Preview -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Desi Protein | Eat Fresh • Gain Strength">
+<meta name="twitter:description" content="Protein-rich salads & fresh juices made daily.">
+<meta name="twitter:image" content="https://saifalishaikhh.github.io/Desi-Protein/images/brand/social-preview.png">
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4CAF50">
+
+<!-- iOS support -->
+<link rel="apple-touch-icon" href="images/icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Desi Protein">
 
   <!-- Global CSS -->
   <link rel="stylesheet" href="css/base.css">
@@ -54,6 +87,13 @@
   <p>Eat Fresh • Gain Strength 💪</p>
   <p>© 2025 Desi Protein</p>
 </footer>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js")
+    .then(() => console.log("Service Worker Registered"));
+}
+</script>
+
 <script src="js/cart.service.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", updateCartCount);
