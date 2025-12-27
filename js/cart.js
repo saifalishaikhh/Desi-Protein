@@ -154,7 +154,8 @@ function orderOnWhatsApp() {
 
   /* OPEN WHATSAPP */
   window.open(
-    "https://wa.me/918828099766?text=" + encodeURIComponent(msg),
+    "https://wa.me/917045756648?text=" + encodeURIComponent(msg),
     "_blank"
   );
 }
+
