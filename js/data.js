@@ -5,7 +5,7 @@ const products = [
 {
   id: "mix-sprout",
   name: "Mix Sprout Salad",
-  image: "images/products/mix-sprout.png",
+  image: "images/products/mix-sprout.webp",
   prices: { "500g": 60 },
 
   ingredients: {
@@ -59,7 +59,7 @@ const products = [
 {
   id: "boiled-sprout",
   name: "Boiled Mix Sprout Salad",
-  image: "images/products/boiled-sprout.png",
+  image: "images/products/boiled-sprout.webp",
   prices: { "500g": 70 },
 
   ingredients: {
@@ -109,7 +109,7 @@ const products = [
 {
   id: "corn-chaat",
   name: "Corn Chaat Salad",
-  image: "images/products/corn-chaat.png",
+  image: "images/products/corn-chaat.webp",
   prices: { "500g": 80 },
 
   ingredients: {
@@ -156,7 +156,7 @@ const products = [
 {
   id: "creamy-corn",
   name: "Creamy Corn Salad",
-  image: "images/products/creamy-corn.png",
+  image: "images/products/creamy-corn.webp",
   prices: { "600g": 99 },
 
   ingredients: {
@@ -203,7 +203,7 @@ const products = [
 {
   id: "boiled-chana",
   name: "Boiled Chana Salad",
-  image: "images/products/boiled-chana.png",
+  image: "images/products/boiled-chana.webp",
   prices: { "600g": 99 },
 
   ingredients: {
@@ -248,7 +248,7 @@ const products = [
 {
   id: "raw-chana",
   name: "Non-Boiled Chana Salad",
-  image: "images/products/raw-chana.png",
+  image: "images/products/raw-chana.webp",
   prices: { "500g": 80 },
 
   ingredients: {
@@ -289,7 +289,7 @@ const products = [
 {
   id: "fruit-salad",
   name: "Fresh Fruit Salad",
-  image: "images/products/fruit-salad.png",
+  image: "images/products/fruit-salad.webp",
   prices: { "600g": 120 },
 
   ingredients: {
@@ -325,7 +325,7 @@ const products = [
 {
   id: "chana-sattu",
   name: "Chana Sattu",
-  image: "images/products/chana-sattu.png",
+  image: "images/products/chana-sattu.webp",
   prices: { "200ml": 49 },
 
   ingredients: {
@@ -357,7 +357,7 @@ const products = [
 {
   id: "beetroot-carrot",
   name: "Beetroot & Carrot Juice",
-  image: "images/products/beetroot-carrot.png",
+  image: "images/products/beetroot-carrot.webp",
   prices: { "200ml": 39 },
 
   ingredients: {
@@ -386,7 +386,7 @@ const products = [
 {
   id: "lemon-juice",
   name: "Lemon Juice",
-  image: "images/products/lemon-juice.png",
+  image: "images/products/lemon-juice.webp",
   prices: { "200ml": 29 },
 
   ingredients: {
@@ -415,3 +415,4 @@ const products = [
 }
 
 ];
+
