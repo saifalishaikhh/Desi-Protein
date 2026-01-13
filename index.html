@@ -3,46 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- BASIC SEO -->
-<title>Desi Protein | Fresh Salads & Healthy Juices</title>
+  <title>Desi Protein | Fresh Salads & Healthy Juices</title>
 
-<meta name="description"
-      content="Desi Protein offers fresh protein-rich salads and healthy juices made from natural ingredients. Eat fresh, gain strength." />
+  <meta name="description"
+        content="Desi Protein offers fresh protein-rich salads and healthy juices made from natural ingredients. Eat fresh, gain strength." />
 
-<meta name="keywords"
-      content="protein salad, sprouts salad, healthy juice, desi protein, gym diet, weight loss food" />
+  <meta name="keywords"
+        content="protein salad, sprouts salad, healthy juice, desi protein, gym diet, weight loss food" />
 
-<meta name="author" content="Desi Protein">
-<meta name="robots" content="index, follow">
-<!-- ================= SOCIAL MEDIA PREVIEW ================= -->
+  <meta name="author" content="Desi Protein">
+  <meta name="robots" content="index, follow">
 
-<!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
-<meta property="og:title" content="Desi Protein | Fresh Salads & Healthy Juices">
-<meta property="og:description" content="Fresh protein-rich salads & natural juices. Eat clean. Gain strength.">
-<meta property="og:image" content="https://saifalishaikhh.github.io/Desi-Protein/images/brand/social-preview.png">
-<meta property="og:url" content="https://saifalishaikhh.github.io/Desi-Protein/">
-<meta property="og:type" content="website">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Desi Protein | Fresh Salads & Healthy Juices">
+  <meta property="og:description" content="Fresh protein-rich salads & natural juices. Eat clean. Gain strength.">
+  <meta property="og:image" content="https://saifalishaikhh.github.io/Desi-Protein/images/brand/social-preview.png">
+  <meta property="og:url" content="https://saifalishaikhh.github.io/Desi-Protein/">
+  <meta property="og:type" content="website">
 
-<!-- Twitter Preview -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Desi Protein | Eat Fresh • Gain Strength">
-<meta name="twitter:description" content="Protein-rich salads & fresh juices made daily.">
-<meta name="twitter:image" content="https://saifalishaikhh.github.io/Desi-Protein/images/brand/social-preview.png">
-<!-- PWA -->
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#4CAF50">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Desi Protein | Eat Fresh • Gain Strength">
+  <meta name="twitter:description" content="Protein-rich salads & fresh juices made daily.">
+  <meta name="twitter:image" content="https://saifalishaikhh.github.io/Desi-Protein/images/brand/social-preview.png">
 
-<!-- iOS support -->
-<link rel="apple-touch-icon" href="images/icons/icon-192.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Desi Protein">
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4CAF50">
+  <link rel="apple-touch-icon" href="images/icons/icon-192.png">
 
-  <!-- Global CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
-
-  <!-- Home only -->
   <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -59,26 +53,25 @@
 <main>
   <div class="category-grid">
 
+    <!-- SALADS -->
     <a href="category.html?type=salad" class="category-card">
-      <img src="images/home-salad.webp" alt="Salads">
+      <div class="image-wrap">
+        <img src="images/home-salad.webp" alt="Fresh Protein Salads">
+      </div>
       <h3>Salads</h3>
+      <p class="category-sub">High-protein • Fresh • Desi</p>
       <span class="category-btn">Explore</span>
     </a>
 
+    <!-- JUICES -->
     <a href="category.html?type=juice" class="category-card">
-      <img src="images/home-juices.webp" alt="Juices">
+      <div class="image-wrap">
+        <img src="images/home-juices.webp" alt="Healthy Natural Juices">
+      </div>
       <h3>Juices</h3>
+      <p class="category-sub">Cold-pressed • Natural • Clean</p>
       <span class="category-btn">Explore</span>
     </a>
-
-    <!-- Future categories plug & play -->
-    <!--
-    <a href="category.html?type=protein" class="category-card">
-      <img src="images/home-protein.png">
-      <h3>Protein Bowls</h3>
-      <span class="category-btn">Explore</span>
-    </a>
-    -->
 
   </div>
 </main>
@@ -87,6 +80,7 @@
   <p>Eat Fresh • Gain Strength 💪</p>
   <p>© 2025 Desi Protein</p>
 </footer>
+
 <script>
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js")
@@ -101,4 +95,3 @@ if ("serviceWorker" in navigator) {
 
 </body>
 </html>
-
